@@ -5,14 +5,18 @@ from Grafo import Grafo
 # ==========================
 g = Grafo()
 
-g.agregar_arista("Patient", "HallA")
-g.agregar_arista("HallA", "HallB")
-g.agregar_arista("HallB", "XRay")
-g.agregar_arista("HallA", "Lab")
-g.agregar_arista("Lab", "Pharmacy")
-g.agregar_arista("HallB", "Surgery")
-g.agregar_arista("Surgery", "IntensiveCare")
-
+g.agregar_arista("PasilloA", "Laboratorio")
+g.agregar_arista("PasilloA", "RayosX")
+g.agregar_arista("PasilloA", "Odontologia")
+g.agregar_arista("PasilloA", "PasilloB")
+g.agregar_arista("Laboratorio", "PasilloA")
+g.agregar_arista("RayosX", "PasilloA")
+g.agregar_arista("Odontologia", "PasilloA")
+g.agregar_arista("PasilloB", "Pediatria")
+g.agregar_arista("PasilloB", "Cirugia")
+g.agregar_arista("Pediatria", "PasilloB")
+g.agregar_arista("Cirugia", "PasilloB")
+g.agregar_arista("PasilloB", "PasilloA")
 # ==========================
 #    MENÚ DE USUARIO
 # ==========================
@@ -33,9 +37,7 @@ meta = input("Ingrese a dónde quiere ir (ej: XRay): ").strip()
 # ==========================
 
 
-print("\n====================================")
-inicio = input("\nIngrese la sala donde se encuentra el paciente: ").strip()
-meta = input("Ingrese a dónde quiere ir (ej: XRay): ").strip()
+
 
 # ==========================
 #      EJECUTAR BFS

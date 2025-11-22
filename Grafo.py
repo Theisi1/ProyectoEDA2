@@ -18,9 +18,9 @@ class Grafo:
         self.agregar_nodo(destino)
         self.ady[origen].append(destino)
 
-    # ==========================
-    #           BFS
-    # ==========================
+
+    #BFS
+
     def bfs(self, inicio, meta):
         start = time.time()
 
@@ -56,9 +56,8 @@ class Grafo:
 
         return dist, padres, ruta, arbol, tiempo
 
-       # ==========================
-    #     DFS estilo académico
-    # ==========================
+    # DFS 
+
     def dfs(self, inicio, meta):
         visited = {nodo: False for nodo in self.ady}
         padres = {inicio: None}
@@ -67,7 +66,7 @@ class Grafo:
 
         print("\n=== Iniciando DFS ===\n")
 
-        # ---- función recursiva ----
+        # función recursiva
         def _dfs(nodo):
             visited[nodo] = True
             recorrido.append(nodo)
@@ -106,9 +105,9 @@ class Grafo:
 
         return padres, ruta_encontrada, recorrido, arbol, visited
 
-    # ==========================
-    #      Auxiliar: árbol
-    # ==========================
+
+    # Auxiliar árbol
+
     def _arbol(self, padres):
         arbol = {}
         for hijo, padre in padres.items():
